@@ -6,15 +6,13 @@ const {welcomeGame, finishGame} = require('./modules/Play.js');
 let inGame = true;
 
 while (inGame) {
-    const testField = new Field([
-        [pathCharacter,fieldCharacter,fieldCharacter],
-        [hole,fieldCharacter,fieldCharacter],
-        [hat,fieldCharacter,hole]
-    ])
-    const gamePlayTest = new GamePlay(testField);
+
+    const fieldGen = Field.generateField(10,10);
+    const newField = new Field(fieldGen);
+    const gamePlayTest = new GamePlay(newField);
 
     welcomeGame();
-    testField.print();
+    newField.print();
 
     while (gamePlayTest.inPlay) {
         gamePlayTest.movePlayer();

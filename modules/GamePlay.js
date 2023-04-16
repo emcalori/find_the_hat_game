@@ -36,12 +36,12 @@ class GamePlay {
                 break;
         
             default:
-                console.log('Invalid choice: please choose up, down, right left')
+                console.log('\nInvalid choice: please choose up, down, right left\n')
                 return this._pos;
         }
 
         if (newPos[0] < 0 || newPos[1] > 0 || newPos[0] > this.field.xLength - 1 || newPos[1] < -(this.field.yLength - 1)) {
-            console.log('Move invalid: move takes you off grid');
+            console.log('\nMove invalid: move takes you off grid\n');
             this.field.print();
             return this._pos;
         }
